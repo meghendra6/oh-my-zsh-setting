@@ -45,7 +45,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git autojump tmux zsh-syntax-highlighting history history-substring-search command-not-found zsh-autosuggestions)
+plugins=(git autojump tmux fast-syntax-highlighting history history-substring-search command-not-found zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -108,3 +108,5 @@ if [[ "$COLORTERM" == "gnome-terminal" ]]; then
         export TERM="xterm-256color"
 fi
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
