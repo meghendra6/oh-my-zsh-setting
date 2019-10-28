@@ -45,7 +45,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git autojump tmux fast-syntax-highlighting history history-substring-search command-not-found zsh-autosuggestions)
+plugins=(git autojump tmux fast-syntax-highlighting history history-substring-search command-not-found zsh-autosuggestions k)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,4 +109,25 @@ if [[ "$COLORTERM" == "gnome-terminal" ]]; then
 fi
 
 
+# >>> fzf init >>>
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+function fzf-view()
+{
+    fzf --preview '[[ $(file --mime {}) =~ binary ]] &&
+                 echo {} is a binary file ||
+                 (highlight -O ansi -l {} ||
+                  coderay {} ||
+                  rougify {} ||
+                  cat {}) 2> /dev/null | head -500'
+}
+# <<< fzf init <<<
+
+eval "$(fasd --init auto)"
+alias a='fasd -a'        # any
+alias s='fasd -si'       # show / search / select
+alias d='fasd -d'        # directory
+alias f='fasd -f'        # file
+alias sd='fasd -sid'     # interactive directory selection
+alias sf='fasd -sif'     # interactive file selection
+alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i' # cd with interactive selection
