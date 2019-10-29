@@ -1,6 +1,16 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+# zplugin load
+source ~/.zplug/init.zsh
+
+# zplugin list
+zplug "b4b4r07/enhancd", use:init.sh
+
+# zplugin install & load
+zplug check || zplug install
+zplug load
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -82,7 +92,7 @@ export JAVA_HOME=/usr/lib/jvm/jdk1.7.0_79
 export ANDROID_JAVA_HOME=$JAVA_HOME
 export LD_LIBRARY_PATH=/usr/local/lib/:/usr/local/libiconv/lib:$LD_LIBRARY_PATH
 export ARCH=arm
-export PATH=$JAVA_HOME/bin:/home/meghendra/Work/bin:$ANDROID_NDK:$PATH:
+export PATH=$JAVA_HOME/bin:/home/meghendra/.cargo/bin:/home/meghendra/Work/bin:$ANDROID_NDK:$PATH:
 
 
 [ -s "/home/meghendra/.scm_breeze/scm_breeze.sh" ] && source "/home/meghendra/.scm_breeze/scm_breeze.sh"
@@ -120,6 +130,27 @@ function fzf-view()
                   rougify {} ||
                   cat {}) 2> /dev/null | head -500'
 }
+
+# for fzf with fd
+export FZF_DEFAULT_COMMAND='fd --type file'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# Options to fzf command
+export FZF_COMPLETION_OPTS='+c -x'
+
+# Use fd (https://github.com/sharkdp/fd) instead of the default find
+# command for listing path candidates.
+# - The first argument to the function ($1) is the base path to start traversal
+# - See the source code (completion.{bash,zsh}) for the details.
+_fzf_compgen_path() {
+  fd --hidden --follow --exclude ".git" . "$1"
+}
+
+# Use fd to generate the list for directory completion
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude ".git" . "$1"
+}
+
 # <<< fzf init <<<
 
 eval "$(fasd --init auto)"
@@ -131,3 +162,10 @@ alias sd='fasd -sid'     # interactive directory selection
 alias sf='fasd -sif'     # interactive file selection
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
+alias v='f -e vim'       # quick opening files with vim
+
+# enhancd
+export ENHANCD_DISABLE_HOME=1
+
+# the fuck
+eval $(thefuck --alias)
