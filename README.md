@@ -35,3 +35,10 @@ sudo apt install ripgrep
 
 8. enhancd
 https://github.com/b4b4r07/enhancd
+
+## gnome-terminal setting
+1. export
+dconf dump /org/gnome/terminal/legacy/profiles:/ > gnome-terminal-profiles.dconf
+
+2. import
+dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal-profiles.dconf

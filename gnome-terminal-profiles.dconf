@@ -1,0 +1,21 @@
+[:79cbc782-b6c3-41a6-b335-d34cc050c9a6]
+foreground-color='#F7F7F7F7F7F7'
+visible-name='Smyck'
+palette=['rgb(0,0,0)', 'rgb(199,86,70)', 'rgb(142,179,59)', 'rgb(208,176,60)', 'rgb(114,179,204)', 'rgb(68,68,68)', 'rgb(33,134,147)', 'rgb(176,176,176)', 'rgb(93,93,93)', 'rgb(224,150,144)', 'rgb(205,238,105)', 'rgb(255,227,119)', 'rgb(156,217,240)', 'rgb(251,177,249)', 'rgb(119,223,216)', 'rgb(247,247,247)']
+bold-is-bright=false
+use-system-font=false
+use-transparent-background=true
+use-theme-colors=false
+font='D2Coding for Powerline 18'
+use-theme-transparency=false
+allow-bold=true
+use-theme-background=false
+bold-color-same-as-fg=true
+bold-color='#F7F7F7F7F7F7'
+background-color='#242424242424'
+background-transparency-percent=4
+scrollback-lines=9999999
+
+[/]
+list=['79cbc782-b6c3-41a6-b335-d34cc050c9a6']
+default='79cbc782-b6c3-41a6-b335-d34cc050c9a6'
