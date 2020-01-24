@@ -1,15 +1,18 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-# zplugin load
-source ~/.zplug/init.zsh
+######################################################################
+# It is better to only enalbe when you use zplugin for performance.
+# # zplugin load
+# source ~/.zplug/init.zsh
 
-# zplugin list
-zplug "b4b4r07/enhancd", use:init.sh
+# # zplugin list
+# zplug "b4b4r07/enhancd", use:init.sh
 
-# zplugin install & load
-zplug check || zplug install
-zplug load
+# # zplugin install & load
+# zplug check || zplug install
+# zplug load
+######################################################################
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -77,7 +80,7 @@ fi
 # Env settings
 export http_proxy="http://168.219.61.252:8080"
 export ftp_proxy="http://168.219.61.252:8080"
-export https_proxy=https://168.219.61.252:8080
+export https_proxy="http://168.219.61.252:8080"
 
 # Perforce Settings
 export P4PORT=165.213.202.43:1713
@@ -114,10 +117,6 @@ fi
 unset __conda_setup
 # <<< conda init <<<
 
-if [[ "$COLORTERM" == "gnome-terminal" ]]; then
-        export TERM="xterm-256color"
-fi
-
 
 # >>> fzf init >>>
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -153,6 +152,7 @@ _fzf_compgen_dir() {
 
 # <<< fzf init <<<
 
+# fasd
 eval "$(fasd --init auto)"
 alias a='fasd -a'        # any
 alias s='fasd -si'       # show / search / select
@@ -166,6 +166,10 @@ alias v='f -e vim'       # quick opening files with vim
 
 # enhancd
 export ENHANCD_DISABLE_HOME=1
+export ENHANCD_DISABLE_DOT=1
 
-# the fuck
-eval $(thefuck --alias)
+# weather
+alias weather='curl v2.wttr.in/'
+
+# simpleperf
+alias sp='/home/meghendra/Work/rkp/pgo/simpleperf/bin/linux/x86_64/simpleperf'
