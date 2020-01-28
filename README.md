@@ -42,3 +42,8 @@ dconf dump /org/gnome/terminal/legacy/profiles:/ > gnome-terminal-profiles.dconf
 
 2. import
 dconf load /org/gnome/terminal/legacy/profiles:/ < gnome-terminal-profiles.dconf
+
+3. icons in terminal (font)
+https://github.com/sebastiencs/icons-in-terminal
+git clone https://github.com/sebastiencs/icons-in-terminal.git
+./install-autodetect.sh 
