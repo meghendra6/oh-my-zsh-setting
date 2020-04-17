@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block, everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -33,7 +40,7 @@ alias server2='ssh aprnd@10.253.105.210 -X'
 # CASE_SENSITIVE="true"
 
 # Uncomment this to disable bi-weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
+#DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how often before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
@@ -82,20 +89,13 @@ export http_proxy="http://168.219.61.252:8080"
 export ftp_proxy="http://168.219.61.252:8080"
 export https_proxy="http://168.219.61.252:8080"
 
-# Perforce Settings
-export P4PORT=165.213.202.43:1713
-export P4BRANCH=//ICS_TASK/ETC/D2_VZW_SPR_IOT
-export P4CLIENT=JI6_ICS_MAIN_COMBINATION_BUILD
-export P4USER=ji6.lee
-
-export ANDROID_NDK=/usr/local/android-ndk-r17b
+export ANDROID_NDK=/usr/local/android-ndk-r20b
 export PYTHON=/usr/bin/python
 # for android
 export JAVA_HOME=/usr/lib/jvm/jdk1.7.0_79
 export ANDROID_JAVA_HOME=$JAVA_HOME
-export LD_LIBRARY_PATH=/usr/local/lib/:/usr/local/libiconv/lib:$LD_LIBRARY_PATH
-export ARCH=arm
-export PATH=$JAVA_HOME/bin:/home/meghendra/.cargo/bin:/home/meghendra/Work/bin:$ANDROID_NDK:$PATH:
+export LD_LIBRARY_PATH=/usr/local/lib/:/usr/local/libiconv/lib:/usr/aarch64-linux-gnu/lib:$LD_LIBRARY_PATH
+export PATH=$JAVA_HOME/bin:/home/meghendra/.cargo/bin:/home/meghendra/Work/bin:$ANDROID_NDK:/home/meghendra/.system/psdk-cli:$PATH:
 
 
 [ -s "/home/meghendra/.scm_breeze/scm_breeze.sh" ] && source "/home/meghendra/.scm_breeze/scm_breeze.sh"
@@ -171,5 +171,15 @@ export ENHANCD_DISABLE_DOT=1
 # weather
 alias weather='curl v2.wttr.in/'
 
-# simpleperf
-alias sp='/home/meghendra/Work/rkp/pgo/simpleperf/bin/linux/x86_64/simpleperf'
+export P4PORT=165.213.202.46:1716
+export P4USER=ji6.lee
+export P4EDITOR=vi
+
+# For ranger
+export EDITOR=vi
+
+# exa
+alias l='exa -alh'
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

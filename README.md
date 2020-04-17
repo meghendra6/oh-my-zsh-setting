@@ -60,7 +60,23 @@ sudo apt install ripgrep
 
 https://github.com/b4b4r07/enhancd
 
+9. exa
+cargo install exa
+https://github.com/ogham/exa
 
+10. bat
+cargo install bat
+https://github.com/sharkdp/bat
+https://github.com/eth-p/bat-extras
+
+11. hexyl
+cargo install hexyl
+https://github.com/sharkdp/hexyl
+
+12. procs
+cargo install procs
+https://github.com/dalance/procs
+>>>>>>> Add various linux tools
 
 ## gnome-terminal setting
 
@@ -80,4 +96,4 @@ https://github.com/sebastiencs/icons-in-terminal
 
 git clone https://github.com/sebastiencs/icons-in-terminal.git
 
-./install-autodetect.sh 
+./install-autodetect.sh
