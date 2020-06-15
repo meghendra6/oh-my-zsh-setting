@@ -19,6 +19,7 @@ ZSH=$HOME/.oh-my-zsh
 # # zplugin install & load
 # zplug check || zplug install
 # zplug load
+zplug 'ytet5uy4/fzf-widgets'
 ######################################################################
 
 # Set name of the theme to load.

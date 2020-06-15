@@ -1,6 +1,7 @@
 # oh-my-zsh-setting
 fast-theme safari
 
+refer : https://github.com/black7375/BlaCk-Void-Zsh
 
 ## Plugins
 1. zplug
@@ -60,23 +61,43 @@ sudo apt install ripgrep
 
 https://github.com/b4b4r07/enhancd
 
-9. exa
+9. git alias
+
+https://github.com/scmbreeze/scm_breeze
+
+10. forgit
+
+https://github.com/wfxr/forgit
+
+11. zsh-completions
+
+https://github.com/zsh-users/zsh-completions
+
+12. zsh-256color
+
+https://github.com/chrissicool/zsh-256color
+
+13. fast-syntax-highlighting
+
+https://github.com/zdharma/fast-syntax-highlighting
+
+14. exa
 cargo install exa
 https://github.com/ogham/exa
 
-10. bat
+15. bat
 cargo install bat
 https://github.com/sharkdp/bat
 https://github.com/eth-p/bat-extras
 
-11. hexyl
+16. hexyl
 cargo install hexyl
 https://github.com/sharkdp/hexyl
 
-12. procs
+17. procs
 cargo install procs
 https://github.com/dalance/procs
->>>>>>> Add various linux tools
+
 
 ## gnome-terminal setting
 
