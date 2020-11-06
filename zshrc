@@ -11,15 +11,16 @@ ZSH=$HOME/.oh-my-zsh
 ######################################################################
 # It is better to only enalbe when you use zplugin for performance.
 # # zplugin load
-# source ~/.zplug/init.zsh
+source ~/.zplug/init.zsh
 
 # # zplugin list
 # zplug "b4b4r07/enhancd", use:init.sh
+zplug 'wfxr/forgit'
+zplug 'chrissicool/zsh-256color'
 
 # # zplugin install & load
-# zplug check || zplug install
-# zplug load
-zplug 'ytet5uy4/fzf-widgets'
+zplug check || zplug install
+zplug load
 ######################################################################
 
 # Set name of the theme to load.
@@ -32,10 +33,6 @@ DEFAULT_USER=meghendra
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# Alias settings
-alias server1='ssh aprnd@10.253.107.130 -X'
-alias server2='ssh aprnd@10.253.105.210 -X'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -66,7 +63,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(gitfast autojump tmux fast-syntax-highlighting history history-substring-search command-not-found zsh-autosuggestions k sudo)
+plugins=(gitfast autojump tmux fast-syntax-highlighting history history-substring-search command-not-found zsh-autosuggestions k sudo zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -132,7 +129,7 @@ function fzf-view()
 }
 
 # for fzf with fd
-export FZF_DEFAULT_COMMAND='fd --type file'
+export FZF_DEFAULT_COMMAND='fd --type file -I'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 # Options to fzf command
@@ -182,5 +179,23 @@ export EDITOR=vi
 # exa
 alias l='exa -alh'
 
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# gitstatus
+source ~/.gitstatus/gitstatus.prompt.zsh
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# zsh-completions
+autoload -U compinit && compinit
+
+# Rust
+export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
+
+# starship
+# https://starship.rs/guide/#%F0%9F%9A%80-installation
+#eval "$(starship init zsh)"
