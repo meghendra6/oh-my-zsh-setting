@@ -62,37 +62,26 @@ scrolling:
   # scrollback is enabled (history > 0).
   multiplier: 3
 
-  # Scroll to the bottom when new text is written to the terminal.
-  auto_scroll: false
-
-# Display tabs using this many cells (changes require restart)
-#
-# Some applications, like Emacs, rely on knowing about the width of a tab. To
-# prevent unexpected behavior in these applications, it's also required to
-# change the `it` value in terminfo when altering this setting.
-#
-tabspaces: 8
-
 # Font configuration (changes require restart)
 font:
   # The normal (roman) font face to use.
   # Style can be specified to pick a specific face.
   normal:
-    family: 'D2Coding for Powerline'
+    family: 'MesloLGS NF'
     # family: "Fira Code"
     # family: "Source Code Pro"
     style: Regular
 
   # The bold font face
   bold:
-    family: 'D2Coding for Powerline'
+    family: 'MesloLGS NF'
     # family: "Fira Code"
     # family: "Source Code Pro"
     style: Bold
 
   # The italic font face
   italic:
-    family: 'D2Coding for Powerline'
+    family: 'MesloLGS NF'
     # family: "Fira Code"
     # family: "Source Code Pro"
     # style: "Medium Italic"
@@ -222,33 +211,6 @@ draw_bold_text_with_bright_colors: false
   #   `- { index: 16, color: '0xff00ff' }`
   #
   #  indexed_colors: []
-
-# Visual Bell
-#
-# Any time the BEL code is received, Alacritty "rings" the visual bell. Once
-# rung, the terminal background will be set to white and transition back to the
-# default background color. You can control the rate of this transition by
-# setting the `duration` property (represented in milliseconds). You can also
-# configure the transition function by setting the `animation` property.
-#
-# Possible values for `animation`
-# `Ease`
-# `EaseOut`
-# `EaseOutSine`
-# `EaseOutQuad`
-# `EaseOutCubic`
-# `EaseOutQuart`
-# `EaseOutQuint`
-# `EaseOutExpo`
-# `EaseOutCirc`
-# `Linear`
-#
-# To completely disable the visual bell, set its duration to 0.
-#
-visual_bell:
-  animation: EaseOutExpo
-  color: '0xffffff'
-  duration: 0
 
 # Background opacity
 background_opacity: 0.8

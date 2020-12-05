@@ -17,6 +17,8 @@ source ~/.zplug/init.zsh
 # zplug "b4b4r07/enhancd", use:init.sh
 zplug 'wfxr/forgit'
 zplug 'chrissicool/zsh-256color'
+zplug "b4b4r07/enhancd", use:init.sh
+zplug "supercrabtree/k"
 
 # # zplugin install & load
 zplug check || zplug install
@@ -63,7 +65,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(gitfast autojump tmux fast-syntax-highlighting history history-substring-search command-not-found zsh-autosuggestions k sudo zsh-completions)
+plugins=(gitfast autojump tmux fast-syntax-highlighting history history-substring-search command-not-found zsh-autosuggestions sudo zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -82,39 +84,7 @@ if [[ "$COLORTERM" == "gnome-terminal" ]]; then
 	export TERM="xterm-256color"
 fi
 
-# Env settings
-export http_proxy="http://168.219.61.252:8080"
-export ftp_proxy="http://168.219.61.252:8080"
-export https_proxy="http://168.219.61.252:8080"
-
-export ANDROID_NDK=/usr/local/android-ndk-r20b
-export PYTHON=/usr/bin/python
-# for android
-export JAVA_HOME=/usr/lib/jvm/jdk1.7.0_79
-export ANDROID_JAVA_HOME=$JAVA_HOME
-export LD_LIBRARY_PATH=/usr/local/lib/:/usr/local/libiconv/lib:/usr/aarch64-linux-gnu/lib:$LD_LIBRARY_PATH
-export PATH=$JAVA_HOME/bin:/home/meghendra/.cargo/bin:/home/meghendra/Work/bin:$ANDROID_NDK:/home/meghendra/.system/psdk-cli:$PATH:
-
-
 [ -s "/home/meghendra/.scm_breeze/scm_breeze.sh" ] && source "/home/meghendra/.scm_breeze/scm_breeze.sh"
-
-# added by Anaconda3 2018.12 installer
-# >>> conda init >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/meghendra/tools/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
-else
-    if [ -f "/home/meghendra/tools/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/meghendra/tools/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
-    else
-        \export PATH="/home/meghendra/tools/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda init <<<
-
 
 # >>> fzf init >>>
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -127,6 +97,8 @@ function fzf-view()
                   rougify {} ||
                   cat {}) 2> /dev/null | head -500'
 }
+
+export PATH=$PATH:~/.cargo/bin/:~/.bin/
 
 # for fzf with fd
 export FZF_DEFAULT_COMMAND='fd --type file -I'
@@ -168,10 +140,6 @@ export ENHANCD_DISABLE_DOT=1
 
 # weather
 alias weather='curl v2.wttr.in/'
-
-export P4PORT=165.213.202.46:1716
-export P4USER=ji6.lee
-export P4EDITOR=vi
 
 # For ranger
 export EDITOR=vi
