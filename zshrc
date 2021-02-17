@@ -71,6 +71,8 @@ source $ZSH/oh-my-zsh.sh
 export HISTFILE=~/.history
 export HISTSIZE=1000000
 export SAVEHIST=$HISTSIZE
+setopt EXTENDED_HISTORY
+
 
 # Other miscellaneous ENV variables
 export PAGER='less -FSRX'
@@ -91,9 +93,15 @@ export ANDROID_NDK=/usr/local/android-ndk-r20b
 export PYTHON=/usr/bin/python
 # for android
 export JAVA_HOME=/usr/lib/jvm/jdk1.7.0_79
+# export JAVA_OPTIONS=-Xmx1024m
 export ANDROID_JAVA_HOME=$JAVA_HOME
 export LD_LIBRARY_PATH=/usr/local/lib/:/usr/local/libiconv/lib:/usr/aarch64-linux-gnu/lib:$LD_LIBRARY_PATH
 export PATH=$JAVA_HOME/bin:/home/meghendra/.cargo/bin:/home/meghendra/Work/bin:$ANDROID_NDK:/home/meghendra/.system/psdk-cli:$PATH:
+
+# for golang
+export GOROOT=/usr/local/go
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 
 [ -s "/home/meghendra/.scm_breeze/scm_breeze.sh" ] && source "/home/meghendra/.scm_breeze/scm_breeze.sh"
@@ -199,3 +207,5 @@ export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 # starship
 # https://starship.rs/guide/#%F0%9F%9A%80-installation
 #eval "$(starship init zsh)"
+
+export ZSH_AUTOSUGGEST_MANUAL_REBIND=false
