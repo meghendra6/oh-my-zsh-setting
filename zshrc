@@ -106,24 +106,6 @@ export PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
 [ -s "/home/meghendra/.scm_breeze/scm_breeze.sh" ] && source "/home/meghendra/.scm_breeze/scm_breeze.sh"
 
-# added by Anaconda3 2018.12 installer
-# >>> conda init >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/home/meghendra/tools/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
-else
-    if [ -f "/home/meghendra/tools/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/meghendra/tools/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
-    else
-        \export PATH="/home/meghendra/tools/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda init <<<
-
-
 # >>> fzf init >>>
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 function fzf-view()
@@ -159,16 +141,16 @@ _fzf_compgen_dir() {
 # <<< fzf init <<<
 
 # fasd
-eval "$(fasd --init auto)"
-alias a='fasd -a'        # any
-alias s='fasd -si'       # show / search / select
-alias d='fasd -d'        # directory
-alias f='fasd -f'        # file
-alias sd='fasd -sid'     # interactive directory selection
-alias sf='fasd -sif'     # interactive file selection
-alias z='fasd_cd -d'     # cd, same functionality as j in autojump
-alias zz='fasd_cd -d -i' # cd with interactive selection
-alias v='f -e vim'       # quick opening files with vim
+# eval "$(fasd --init auto)"
+# alias a='fasd -a'        # any
+# alias s='fasd -si'       # show / search / select
+# alias d='fasd -d'        # directory
+# alias f='fasd -f'        # file
+# alias sd='fasd -sid'     # interactive directory selection
+# alias sf='fasd -sif'     # interactive file selection
+# alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+# alias zz='fasd_cd -d -i' # cd with interactive selection
+# alias v='f -e vim'       # quick opening files with vim
 
 # enhancd
 export ENHANCD_DISABLE_HOME=1
@@ -204,8 +186,31 @@ autoload -U compinit && compinit
 # Rust
 export RUST_SRC_PATH=$(rustc --print sysroot)/lib/rustlib/src/rust/src/
 
+export ZSH_AUTOSUGGEST_MANUAL_REBIND=false
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/meghendra/.anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/meghendra/.anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/meghendra/.anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/meghendra/.anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+# { psdk-cli
+export PSDK_CLI_HOME=/home/meghendra/Work/psdk-cli  # psdk-cli
+[ -f "$PSDK_CLI_HOME/configs/psdk-cli-autocomplete.bash" ] && source "$PSDK_CLI_HOME/configs/psdk-cli-autocomplete.bash"
+export PATH=$PATH:$PSDK_CLI_HOME  # psdk-cli path
+# psdk-cli }
+
 # starship
 # https://starship.rs/guide/#%F0%9F%9A%80-installation
-#eval "$(starship init zsh)"
+# eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
 
-export ZSH_AUTOSUGGEST_MANUAL_REBIND=false

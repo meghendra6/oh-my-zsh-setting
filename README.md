@@ -1,9 +1,10 @@
 # oh-my-zsh-setting
 fast-theme safari
 
-refer : https://github.com/black7375/BlaCk-Void-Zsh
+refer : https://github.com/black7375/BlaCk-Void-Zsh, https://zaiste.net/posts/shell-commands-rust/
 
 ## Plugins
+
 1. zplug
 
 wget https://raw.githubusercontent.com/zplug/installer/master/installer.zsh && zsh installer.zsh
@@ -82,21 +83,72 @@ https://github.com/chrissicool/zsh-256color
 https://github.com/zdharma/fast-syntax-highlighting
 
 14. exa
+
 cargo install exa
+
 https://github.com/ogham/exa
 
 15. bat
+
 cargo install bat
+
 https://github.com/sharkdp/bat
+
 https://github.com/eth-p/bat-extras
 
 16. hexyl
+
 cargo install hexyl
+
 https://github.com/sharkdp/hexyl
 
 17. procs
+
 cargo install procs
+
 https://github.com/dalance/procs
+
+18. sd
+
+cargo install sd
+
+https://github.com/chmln/sd
+
+19. dust
+
+cargo install dust
+
+https://github.com/bootandy/dust
+
+20. ytop
+
+cargo install ytop
+
+https://github.com/cjbassi/ytop
+
+21. delta
+
+cargo install delta
+
+https://github.com/dandavison/delta
+
+22. tealdeer
+
+cargo install tealdeer
+
+https://github.com/dbrgn/tealdeer
+
+23. grex
+
+cargo install grex
+
+https://github.com/pemistahl/grex
+
+24. zoxide
+
+cargo install zoxide
+
+https://github.com/ajeetdsouza/zoxide
 
 
 ## gnome-terminal setting
